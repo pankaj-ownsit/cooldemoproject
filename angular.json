@@ -96,6 +96,37 @@
           }
         }
       }
+    },
+    "ngxprimetime": {
+      "projectType": "library",
+      "root": "projects/ngxprimetime",
+      "sourceRoot": "projects/ngxprimetime/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngxprimetime/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngxprimetime/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngxprimetime/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngxprimetime/src/test.ts",
+            "tsConfig": "projects/ngxprimetime/tsconfig.spec.json",
+            "karmaConfig": "projects/ngxprimetime/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
